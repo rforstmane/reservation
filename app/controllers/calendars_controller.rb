@@ -8,10 +8,16 @@ class CalendarsController < ApplicationController
   end
 
   def remote_calendars
-    @calendars = Calendar.all.includes(:employee)
+    @calendars = Calendar.all.includes(:employee, :bicycle)
+
     @calendars_with_employees = @calendars.map do |calendar|
       calendar.attributes.merge(
         'full_name' => calendar.employee.full_name
+      )
+    end
+    @calendars_with_bicycles = @calendars.map do |calendar|
+      calendar.attributes.merge(
+        'bicycle_type' => calendar.bicycle.bicycle_type
       )
     end
 

@@ -1,4 +1,4 @@
 class Calendar < ApplicationRecord
- has_many :employee
- has_many :bicycle
+ belongs_to :employee
+ belongs_to :bicycle
 end
