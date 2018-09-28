@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_061904) do
+ActiveRecord::Schema.define(version: 2018_09_28_062443) do
 
   create_table "bicycles", force: :cascade do |t|
     t.string "bicycle_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "calendars", force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "bicycle_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
