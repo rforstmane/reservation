@@ -7,6 +7,16 @@ class CalendarsController < ApplicationController
     @calendars = Calendar.all
   end
 
+  def remote_calendars
+    @calendars = Calendar.all.includes(:employee)
+    @calendars_with_employees = @calendars.map do |calendar|
+      calendar.attributes.merge(
+        'full_name' => calendar.employee.full_name
+      )
+    end
+
+  end
+
   # GET /calendars/1
   # GET /calendars/1.json
   def show

@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :employee_id %>
-    <%= form.number_field :employee_id %>
+    <%= form.label :employee %>
+    <%= form.collection_select :employee_id, Employee.all, :id, :full_name, prompt: true %>
   </div>
 
   <div class="field">
-    <%= form.label :bicycle_id %>
-    <%= form.number_field :bicycle_id %>
+    <%= form.label :bicycle %>
+    <%= form.collection_select :bicycle_id, Bicycle.all, :id, :bicycle_type, prompt: true %>
   </div>
 
   <div class="field">
