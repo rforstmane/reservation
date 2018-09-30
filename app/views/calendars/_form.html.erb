@@ -21,6 +21,7 @@
     <%= form.collection_select :bicycle_id, Bicycle.all, :id, :bicycle_type, prompt: true %>
   </div>
 
+  
   <div class="field">
     <%= form.label :start_time %>
     <%= form.datetime_select :start_time %>

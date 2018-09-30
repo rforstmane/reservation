@@ -40,6 +40,7 @@ class CalendarsController < ApplicationController
   # POST /calendars
   # POST /calendars.json
   def create
+    logger.debug(calendar_params)
     @calendar = Calendar.new(calendar_params)
 
     respond_to do |format|
