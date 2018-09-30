@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Calendars</h1>
+<div id="menubar">
+  <ul id="menu">
+    <li class="home"><%= link_to 'HOME', calendars_path %></li>
+    <li class="employee"><%= link_to 'EMPLOYEE', employees_path %></li>
+    <li class="bike"><%= link_to 'BICYCLE',bicycles_path %></li>
+  </ul>
+</div>
+
+<h2>Calendars</h2>
 
 <table>
   <thead>
@@ -17,7 +25,7 @@
     <% @calendars.each do |calendar| %>
       <tr>
         <td><%= calendar.employee.full_name %></td>
-        <td><%= calendar.bicycle.bicycle_type %></td
+        <td><%= calendar.bicycle.bicycle_type %></td>
         <td><%= calendar.start_time %></td>
         <td><%= calendar.end_time %></td>
         <td><%= link_to 'Show', calendar %></td>
@@ -28,6 +36,6 @@
   </tbody>
 </table>
 
-<br>
+
 
 <%= link_to 'New Calendar', new_calendar_path %>

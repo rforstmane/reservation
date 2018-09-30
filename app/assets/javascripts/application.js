@@ -11,6 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+// $(document).ready(function(){
+//     alert("Dokuments ir ielādējies!")
+//     console.log("Šis ir teksts")
+//     console.log(document)
+// })

@@ -20,7 +20,7 @@ class CalendarsController < ApplicationController
         'bicycle_type' => calendar.bicycle.bicycle_type
       )
     end
-
+    render json: @calendars
   end
 
   # GET /calendars/1
